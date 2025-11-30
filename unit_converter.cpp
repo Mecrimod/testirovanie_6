@@ -53,7 +53,7 @@ private:
         return confirmation == 'y';
     }
 
-    void performConversion(const string& type, const map<string, Conversion, std::less<>>& conversions) {
+    void performConversion(const string& type, const map<string, Conversion, std::less<>>& conversions) const {
         cout << "-----------------------------------\n";
         cout << "Выберите вариант конвертации:\n";
         
