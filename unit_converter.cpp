@@ -39,14 +39,14 @@ private:
     map<string, Conversion, std::less<>> length_conversions;
     map<string, Conversion, std::less<>> info_conversions;
 
-    double const getInput(const string& prompt) {
+    const double getInput(const string& prompt) {
         double value;
         cout << prompt;
         cin >> value;
         return value;
     }
 
-    bool const confirmInput() {
+    const bool confirmInput() {
         char confirmation;
         cout << "Вы подтверждаете данные? Введите символ (y), если да, если нет - n: ";
         cin >> confirmation;
