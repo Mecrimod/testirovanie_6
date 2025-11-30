@@ -35,25 +35,25 @@ private:
     static const int BYTE_BIT = 8;
     static const int KILOBYTE_BYTE = 1024;
 
-    std::less<string, Conversion> weight_conversions;
-    std::less<string, Conversion> length_conversions;
-    std::less<string, Conversion> info_conversions;
+    map<string, Conversion> weight_conversions;
+    map<string, Conversion> length_conversions;
+    map<string, Conversion> info_conversions;
 
-    const getInput(const string& prompt) {
+    double getInput(const string& prompt) {
         double value;
         cout << prompt;
         cin >> value;
         return value;
     }
 
-    const confirmInput() {
+    bool confirmInput() {
         char confirmation;
         cout << "Вы подтверждаете данные? Введите символ (y), если да, если нет - n: ";
         cin >> confirmation;
         return confirmation == 'y';
     }
 
-    void performConversion(const string& type, const std::less<string, Conversion>& conversions) {
+    void performConversion(const string& type, const map<string, Conversion>& conversions) {
         cout << "-----------------------------------\n";
         cout << "Выберите вариант конвертации:\n";
         
