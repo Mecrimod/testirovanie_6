@@ -5,11 +5,9 @@
 
 using namespace std;
 
-// Базовые функции конвертации
 double multiply(double value, double factor) { return value * factor; }
 double divide(double value, double factor) { return value / factor; }
 
-// Структура для хранения информации о конвертации
 struct Conversion {
     string from_unit;
     string to_unit;
@@ -18,7 +16,6 @@ struct Conversion {
 
 class UnitConverter {
 private:
-    // Константы для конвертации
     static const int TON_KG = 1000;
     static const int CENTNER_KG = 100;
     static const int KG_GRAM = 1000;
@@ -95,7 +92,6 @@ private:
 
 public:
     UnitConverter() {
-        // Инициализация конвертеров веса
         weight_conversions = {
             {"1", {"Тонны", "килограммы", [](double v) { return multiply(v, TON_KG); }}},
             {"2", {"Килограммы", "тонны", [](double v) { return divide(v, TON_KG); }}},
@@ -107,7 +103,6 @@ public:
             {"8", {"Миллиграммы", "граммы", [](double v) { return divide(v, GRAM_MG); }}}
         };
 
-        // Инициализация конвертеров длины
         length_conversions = {
             {"1", {"Километры", "метры", [](double v) { return multiply(v, KM_M); }}},
             {"2", {"Метры", "километры", [](double v) { return divide(v, KM_M); }}},
@@ -125,7 +120,6 @@ public:
             {"14", {"Микроны", "миллиметры", [](double v) { return divide(v, MM_MICRON); }}}
         };
 
-        // Инициализация конвертеров информации
         info_conversions = {
             {"1", {"Байты", "биты", [](double v) { return multiply(v, BYTE_BIT); }}},
             {"2", {"Килобайты", "байты", [](double v) { return multiply(v, KILOBYTE_BYTE); }}},
